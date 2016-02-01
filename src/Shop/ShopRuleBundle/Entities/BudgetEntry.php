@@ -46,7 +46,7 @@ class BudgetEntry
     private $sourceCategory;
     
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetimeutc")
      */
     private $date;
     

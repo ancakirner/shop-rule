@@ -8,8 +8,8 @@ use Shop\ShopRuleBundle\Entities\BudgetEntry;
 class BudgetController extends Controller
 {
     public function setInitialBudgetAction(Request $request)
-    {            
-        $thisMonth = new \DateTime(date('Y-m-01'));
+    {
+        $thisMonth = new \DateTime('now');
         
         $repository = $this->getDoctrine()->getRepository('ShopShopRuleBundle:BudgetEntry');
         $cashBudget = $repository->findOneBy(
