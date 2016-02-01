@@ -1,0 +1,4 @@
+shop_shop_rule:
+    resource: "@ShopShopRuleBundle/Resources/config/routing.yml"
+    prefix:   /
+

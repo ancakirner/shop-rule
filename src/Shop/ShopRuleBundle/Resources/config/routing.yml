@@ -1,0 +1,21 @@
+save_on_source_category:
+    path: /add/{source}/{type}
+    defaults: { _controller: ShopShopRuleBundle:SourceCategory:saveNewItem }
+    methods: [GET, POST]
+    requirements:
+        source: cash|card
+        type: income|spent
+view_source_category:
+    path: /view/{source}
+    defaults: { _controller: ShopShopRuleBundle:SourceCategory:viewProducts }
+    methods: [GET]
+    requirements:
+        source: cash|card
+init_budget:
+    path: /budget/init
+    defaults: { _controller: ShopShopRuleBundle:Budget:setInitialBudget }
+    methods: [GET, POST]
+homepage:
+    path: /homepage
+    defaults: { _controller: ShopShopRuleBundle:Homepage:homepage }
+    methods: [GET]
