@@ -1,0 +1,21 @@
+prokea_shop_rule_homepage:
+    path:       /homepage
+    defaults:   { _controller: ProkeaShopRuleBundle:Homepage:homepage }
+    methods:    [GET]
+init_budget:
+    path:       /budget/init
+    defaults:   { _controller: ProkeaShopRuleBundle:Budget:setInitialBudget }
+    methods:    [GET, POST]
+view_source_category:
+    path: /view/{source}
+    defaults: { _controller: ProkeaShopRuleBundle:SourceCategory:viewProducts }
+    methods: [GET]
+    requirements:
+        source: cash|card
+save_on_source_category:
+    path: /add/{source}/{type}
+    defaults: { _controller: ProkeaShopRuleBundle:SourceCategory:saveNewItem }
+    methods: [GET, POST]
+    requirements:
+        source: cash|card
+        type: income|spent
