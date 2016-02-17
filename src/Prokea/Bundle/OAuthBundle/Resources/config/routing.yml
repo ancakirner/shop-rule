@@ -1,0 +1,3 @@
+prokea_o_auth_homepage:
+    path:     /
+    defaults: { _controller: ProkeaOAuthBundle:Default:index }

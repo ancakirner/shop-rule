@@ -1,0 +1,4 @@
+services:
+#    prokea_o_auth.example:
+#        class: Prokea\Bundle\OAuthBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

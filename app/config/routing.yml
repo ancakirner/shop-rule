@@ -1,0 +1,11 @@
+prokea_o_auth:
+    resource: "@ProkeaOAuthBundle/Resources/config/routing.yml"
+    prefix:   /
+
+prokea_shop_rule:
+    resource: "@ProkeaShopRuleBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

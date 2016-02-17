@@ -1,0 +1,10 @@
+{% extends 'ProkeaShopRuleBundle::index.html.twig' %}
+
+
+
+{% block content %}
+    <a href="/view/card"><input type="button" value="CARD {{budget.card}}"/></a>
+<input type="button" value="TOTAL {{budget.total}}"/>
+<a href="/view/cash"><input type="button" value="CASH {{budget.cash}}"/></a>
+
+{% endblock %}

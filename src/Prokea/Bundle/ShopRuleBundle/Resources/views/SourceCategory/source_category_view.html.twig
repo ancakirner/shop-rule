@@ -1,0 +1,25 @@
+<h1>{{ budget.source }}</h1>
+
+<div>
+    <a href="/add/{{source}}/income">+</a>
+</div>
+<br/>
+<div>
+    <a href="/add/{{source}}/spent">-</a>
+</div>
+
+<div id="plus_items">
+    <ul>
+    {% for item in plus_items %}
+        <li>+ {{ item.getDescription() }} : {{ item.getAmount() }}</li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="minus_items">
+    <ul>
+    {% for item in minus_items %}
+        <li>- {{ item.getDescription() }} : {{ item.getAmount() }}</li>
+    {% endfor %}
+    </ul>
+</div>
