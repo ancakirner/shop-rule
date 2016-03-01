@@ -1,6 +1,6 @@
 <?php
 
-namespace Prokea\Bundle\OAuthBundle\Controller;
+namespace Prokea\Bundle\AuthenticationBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ProkeaOAuthBundle:Default:index.html.twig');
+        return $this->render('ProkeaAuthenticationBundle:Default:index.html.twig');
     }
 }

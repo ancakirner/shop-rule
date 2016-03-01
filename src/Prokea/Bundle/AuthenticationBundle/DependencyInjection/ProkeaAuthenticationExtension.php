@@ -1,6 +1,6 @@
 <?php
 
-namespace Prokea\Bundle\OAuthBundle\DependencyInjection;
+namespace Prokea\Bundle\AuthenticationBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class ProkeaOAuthExtension extends Extension
+class ProkeaAuthenticationExtension extends Extension
 {
     /**
      * {@inheritdoc}

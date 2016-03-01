@@ -1,0 +1,7 @@
+shop_login:
+    path:       /login
+    defaults:   { _controller: ProkeaAuthenticationBundle:Login:login }
+    methods:    [ GET ]
+login_check:
+    path:       /authorize/login_check
+    methods:    [ GET|POST ]

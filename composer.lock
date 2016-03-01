@@ -55,20 +55,21 @@
         },
         {
             "name": "authbucket/oauth2-php",
-            "version": "4.0.5",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/authbucket/oauth2-php.git",
-                "reference": "67df787e920f878d83c8f515745011abe771c740"
+                "reference": "c5f742b8385796e54e021d9a30ef8037e79c9d2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/authbucket/oauth2-php/zipball/67df787e920f878d83c8f515745011abe771c740",
-                "reference": "67df787e920f878d83c8f515745011abe771c740",
+                "url": "https://api.github.com/repos/authbucket/oauth2-php/zipball/c5f742b8385796e54e021d9a30ef8037e79c9d2f",
+                "reference": "c5f742b8385796e54e021d9a30ef8037e79c9d2f",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "~6.0",
+                "lib-openssl": "*",
                 "php": ">=5.5.9",
                 "psr/log": "~1.0",
                 "symfony/http-foundation": "~2.8|~3.0",
@@ -125,20 +126,20 @@
                 "psr-3",
                 "silex"
             ],
-            "time": "2015-12-21 13:56:58"
+            "time": "2016-02-20 02:07:38"
         },
         {
             "name": "authbucket/oauth2-symfony-bundle",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/authbucket/oauth2-symfony-bundle.git",
-                "reference": "a7ccb818843292d48636120344e1dfb1e136ef86"
+                "reference": "93aa86395c9bcba9b3d39e1b1f04f5d7969e293b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/authbucket/oauth2-symfony-bundle/zipball/a7ccb818843292d48636120344e1dfb1e136ef86",
-                "reference": "a7ccb818843292d48636120344e1dfb1e136ef86",
+                "url": "https://api.github.com/repos/authbucket/oauth2-symfony-bundle/zipball/93aa86395c9bcba9b3d39e1b1f04f5d7969e293b",
+                "reference": "93aa86395c9bcba9b3d39e1b1f04f5d7969e293b",
                 "shasum": ""
             },
             "require": {
@@ -194,7 +195,7 @@
                 "psr-3",
                 "symfony"
             ],
-            "time": "2015-12-21 14:58:24"
+            "time": "2016-02-20 02:40:51"
         },
         {
             "name": "doctrine/annotations",
@@ -1077,16 +1078,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb"
+                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5d04bdd2881ac89abde1fb78cc234bce24327bb",
-                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2e89629ff057ebb49492ba08e6995d3a6a80021b",
+                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b",
                 "shasum": ""
             },
             "require": {
@@ -1131,7 +1132,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-01-23 01:23:02"
+            "time": "2016-02-18 21:54:00"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1542,25 +1543,32 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.12",
+            "version": "v3.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "3e8936fe13aa4086644977d334d8fcd275f50357"
+                "reference": "bf6be511f4f66d368baeb2cab617203d73cccf4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/3e8936fe13aa4086644977d334d8fcd275f50357",
-                "reference": "3e8936fe13aa4086644977d334d8fcd275f50357",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/bf6be511f4f66d368baeb2cab617203d73cccf4e",
+                "reference": "bf6be511f4f66d368baeb2cab617203d73cccf4e",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.2",
+                "symfony/dependency-injection": "~2.3|~3.0",
                 "symfony/framework-bundle": "~2.3|~3.0"
             },
             "require-dev": {
+                "symfony/browser-kit": "~2.3|~3.0",
+                "symfony/dom-crawler": "~2.3|~3.0",
                 "symfony/expression-language": "~2.4|~3.0",
-                "symfony/security-bundle": "~2.4|~3.0"
+                "symfony/finder": "~2.3|~3.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/security-bundle": "~2.4|~3.0",
+                "symfony/twig-bundle": "~2.3|~3.0",
+                "twig/twig": "~1.11|~2.0"
             },
             "suggest": {
                 "symfony/expression-language": "",
@@ -1593,7 +1601,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2015-12-18 17:39:27"
+            "time": "2016-02-12 08:17:23"
         },
         {
             "name": "sensiolabs/security-checker",

@@ -66,6 +66,12 @@ doctrine:
                 dir: %kernel.root_dir%/../src/Prokea/Bundle/ShopRuleBundle/Entities/
                 prefix: Prokea\Bundle\ShopRuleBundle\Entities
                 alias: ProkeaShopRuleBundle
+#            ProkeaAuthenticationBundle:
+#                type: annotation
+#                is_bundle: false
+#                dir: %kernel.root_dir%/../src/Prokea/Bundle/AuthenticationBundle/Entity/
+#                prefix: Prokea\Bundle\AuthenticationBundle\Entity
+#                alias: ProkeaAuthenticationBundle
 
 # Swiftmailer Configuration
 swiftmailer:

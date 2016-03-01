@@ -1,5 +1,5 @@
-prokea_o_auth:
-    resource: "@ProkeaOAuthBundle/Resources/config/routing.yml"
+prokea_authentication:
+    resource: "@ProkeaAuthenticationBundle/Resources/config/routing.yml"
     prefix:   /
 
 prokea_shop_rule:

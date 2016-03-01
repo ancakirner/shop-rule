@@ -1,6 +1,6 @@
 <?php
 
-namespace Prokea\Bundle\OAuthBundle\Tests\Controller;
+namespace Prokea\Bundle\AuthenticationBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

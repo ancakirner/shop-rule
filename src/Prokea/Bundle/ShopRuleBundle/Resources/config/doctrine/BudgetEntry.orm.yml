@@ -1,0 +1,11 @@
+Prokea\Bundle\ShopRuleBundle\Entities\BudgetEntry:
+    type: entity
+    table: null
+    repositoryClass: Prokea\Bundle\ShopRuleBundle\Entities\BudgetEntryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

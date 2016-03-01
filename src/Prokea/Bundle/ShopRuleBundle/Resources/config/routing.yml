@@ -19,3 +19,7 @@ save_on_source_category:
     requirements:
         source: cash|card
         type: income|spent
+index:
+    path:       /
+    defaults:   { _controller:ProkeaShopRuleBundle:Default:index }
+    methods:    [ GET ]

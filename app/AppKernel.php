@@ -17,7 +17,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Prokea\Bundle\ShopRuleBundle\ProkeaShopRuleBundle(),
-            new Prokea\Bundle\OAuthBundle\ProkeaOAuthBundle(),
+            new AuthBucket\Bundle\OAuth2Bundle\AuthBucketOAuth2Bundle(),
+            new Prokea\Bundle\AuthenticationBundle\ProkeaAuthenticationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
