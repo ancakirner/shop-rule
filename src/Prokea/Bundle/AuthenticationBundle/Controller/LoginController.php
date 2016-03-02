@@ -19,25 +19,11 @@ class LoginController extends Controller
         } else {
             $error = $request->getSession()->get(Security::AUTHENTICATION_ERROR);
         }
-
+        
         $_username = $session->get('_username');
         $_password = $session->get('_password');
+        var_dump($_username,$_password);
         
-        $user = new User();
-$plainPassword = '12345';
-$factory = $this->container->get('security.encoder_factory');
-$encoder = $factory->getEncoder($user);
-//$encoder = $this->container->get('security.password_encoder');
-$encoded = $encoder->encodePassword($plainPassword, $user->getSalt());
-
-$user->setPassword($encoded);
-
-var_dump($user->getPassword());
-//        $user = new User();
-//        $password = $this->get('security.password_encoder')
-//                ->encodePassword($user, '12345');
-        var_dump($_password);
-
         return $this->render('ProkeaAuthenticationBundle:Login:login.html.twig', [
                 'error' => $error,
                 '_username' => $_username,

@@ -11,7 +11,7 @@ security:
                 class: ProkeaShopRuleBundle:User
                 property: username
 
-    firewalls:
+    firewalls:        
         user_registration:
             pattern:   ^/register$
             anonymous: ~
@@ -24,13 +24,14 @@ security:
             pattern: ^/
             form_login:
                 login_path: /login
-                check_path: /authorize/login_check
+                check_path: /login_check
+                target_path_parameter: /register
             provider:       db_provider
             
     access_control:
         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/, roles: ROLE_USER }
+#        - { path: ^/, roles: ROLE_USER }
 #        shop_login:
 #            pattern:                ^login$
 #            anonymous:              ~

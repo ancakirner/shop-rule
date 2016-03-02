@@ -28,7 +28,7 @@ class UserRepository extends AbstractEntityRepository implements UserLoaderInter
     }
 
     public function reloadUser(UserInterface $user)
-    {
+    {echo 'aaaaaaaa';
         $this->getEntityManager()->refresh($user);
     }
 
