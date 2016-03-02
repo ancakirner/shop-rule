@@ -3,7 +3,8 @@ namespace Prokea\Bundle\AuthenticationBundle\Entity;
 
 use AuthBucket\OAuth2\Model\ModelInterface;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
  * User.
@@ -11,7 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="Prokea\Bundle\AuthenticationBundle\Entity\UserRepository")
  */
-class User implements ModelInterface, UserInterface
+class User implements ModelInterface, AdvancedUserInterface, \Serializable
 {
     /**
      * @var int
@@ -27,7 +28,13 @@ class User implements ModelInterface, UserInterface
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
-    private $username;
+    private $email;
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
 
     /**
      * @var string
@@ -63,16 +70,14 @@ class User implements ModelInterface, UserInterface
         return $this->id;
     }
 
-    /**
-     * Set username.
-     *
-     * @param string $username
-     *
-     * @return User
-     */
-    public function setUsername($username)
+    function getEmail()
     {
-        $this->username = $username;
+        return $this->email;
+    }
+
+    function setUsername($username)
+    {
+        $this->email = $username;
     }
 
     /**
@@ -82,7 +87,7 @@ class User implements ModelInterface, UserInterface
      */
     public function getUsername()
     {
-        return $this->username;
+        return $this->email;
     }
 
     /**
@@ -107,6 +112,16 @@ class User implements ModelInterface, UserInterface
         return $this->password;
     }
 
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
+    
     /**
      * Set roles.
      *
@@ -137,5 +152,49 @@ class User implements ModelInterface, UserInterface
 
     public function eraseCredentials()
     {
+    }
+    
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
+    }
+
+/** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->email,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+        ) = unserialize($serialized);
     }
 }

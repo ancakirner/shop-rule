@@ -1,3 +1,7 @@
+user_registration:
+    path:       /register
+    defaults:   { _controller: ProkeaAuthenticationBundle:Registration:register }
+    methods:    [ GET|POST ]
 shop_login:
     path:       /login
     defaults:   { _controller: ProkeaAuthenticationBundle:Login:login }

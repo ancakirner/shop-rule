@@ -2,8 +2,7 @@
 # http://symfony.com/doc/current/book/security.html
 security:
     encoders:
-        Prokea\Bundle\AuthenticationBundle\Entity\User:
-            algorithm: bcrypt
+        Prokea\Bundle\AuthenticationBundle\Entity\User: bcrypt
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
@@ -13,6 +12,10 @@ security:
                 property: username
 
     firewalls:
+        user_registration:
+            pattern:   ^/register$
+            anonymous: ~
+            
         shop_login: 
             pattern:   ^/login$
             anonymous: ~
@@ -25,6 +28,7 @@ security:
             provider:       db_provider
             
     access_control:
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }
 #        shop_login:
