@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 //use Symfony\Component\HttpKernel\Client;
 use Symfony\Component\Security\Core\Security;
-use Prokea\Bundle\AuthenticationBundle\Entity\User;
 
 class LoginController extends Controller
 {
@@ -22,7 +21,6 @@ class LoginController extends Controller
         
         $_username = $session->get('_username');
         $_password = $session->get('_password');
-        var_dump($_username,$_password);
         
         return $this->render('ProkeaAuthenticationBundle:Login:login.html.twig', [
                 'error' => $error,

@@ -8,8 +8,8 @@ security:
     providers:
         db_provider:
             entity:
-                class: ProkeaShopRuleBundle:User
-                property: username
+                class: ProkeaAuthenticationBundle:User
+                property: email
 
     firewalls:        
         user_registration:
@@ -25,13 +25,15 @@ security:
             form_login:
                 login_path: /login
                 check_path: /login_check
-                target_path_parameter: /register
+            logout:
+                path:       /logout
+                target:     /
             provider:       db_provider
             
     access_control:
         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-#        - { path: ^/, roles: ROLE_USER }
+        - { path: ^/, roles: ROLE_USER }
 #        shop_login:
 #            pattern:                ^login$
 #            anonymous:              ~

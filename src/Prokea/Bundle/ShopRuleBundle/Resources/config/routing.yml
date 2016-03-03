@@ -7,19 +7,19 @@ init_budget:
     defaults:   { _controller: ProkeaShopRuleBundle:Budget:setInitialBudget }
     methods:    [GET, POST]
 view_source_category:
-    path: /view/{source}
-    defaults: { _controller: ProkeaShopRuleBundle:SourceCategory:viewProducts }
-    methods: [GET]
+    path:       /view/{source}
+    defaults:   { _controller: ProkeaShopRuleBundle:SourceCategory:viewProducts }
+    methods:    [GET]
     requirements:
         source: cash|card
 save_on_source_category:
-    path: /add/{source}/{type}
-    defaults: { _controller: ProkeaShopRuleBundle:SourceCategory:saveNewItem }
-    methods: [GET, POST]
+    path:       /add/{source}/{type}
+    defaults:   { _controller: ProkeaShopRuleBundle:SourceCategory:saveNewItem }
+    methods:    [GET, POST]
     requirements:
         source: cash|card
-        type: income|spent
+        type:   income|spent
 index:
     path:       /
-    defaults:   { _controller:ProkeaShopRuleBundle:Default:index }
+    defaults:   { _controller:ProkeaShopRuleBundle:Homepage:homepage }
     methods:    [ GET ]

@@ -9,3 +9,5 @@ shop_login:
 login_check:
     path:       /login_check
     methods:    [ GET|POST ]
+logout:
+    path:       /logout
