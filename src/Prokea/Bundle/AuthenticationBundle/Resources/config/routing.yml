@@ -11,3 +11,19 @@ login_check:
     methods:    [ GET|POST ]
 logout:
     path:       /logout
+authorize:
+    path:       /oauth/authorize
+    defaults:   { _controller: ProkeaAuthenticationBundle:Authentication:authorize }
+    methods:    [ GET|POST ]
+request_code:
+    path:       /oauth/request/code
+    defaults:   { _controller: ProkeaAuthenticationBundle:Authentication:requestCode }
+    methods:    [ GET ]
+demo_response_type_code:
+    path:       /oauth/response_type/code
+    defaults:   { _controller: ProkeaAuthenticationBundle:Authentication:responseTypeCode }
+    methods:    [ GET ]
+demo_grant_type_authorization_code:
+    path:       /oauth/grant_type/authorization_code
+    defaults:   { _controller: ProkeaAuthenticationBundle:Authentication:grantTypeAuthorizationCode }
+    methods:    [ GET ]

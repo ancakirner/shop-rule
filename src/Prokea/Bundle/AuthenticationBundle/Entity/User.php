@@ -51,7 +51,7 @@ class User implements ModelInterface, AdvancedUserInterface, \Serializable
     /**
      * @var array
      *
-     * @ORM\Column(name="roles", type="string")
+     * @ORM\Column(name="roles", type="array")
      */
     private $roles;
 

@@ -1,4 +1,12 @@
 services:
+    prokea.oauth2_controller:
+        class: AuthBucket\OAuth2\Controller\OAuth2Controller
+        arguments:
+            - "@security.token_storage"
+            - "@validator"
+            - "@authbucket_oauth2.model_manager.factory"
+            - "@authbucket_oauth2.response_handler.factory"
+            - "@authbucket_oauth2.grant_handler.factory"
 #    prokea_authentication.example:
 #        class: Prokea\Bundle\AuthenticationBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]

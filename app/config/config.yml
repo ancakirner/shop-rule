@@ -74,3 +74,15 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+    
+authbucket_oauth2:
+    driver:                 orm
+    user_provider:          security.user.provider.concrete.db_provider
+    model:
+        access_token:       Prokea\Bundle\AuthenticationBundle\Entity\AccessToken
+        authorize:          Prokea\Bundle\AuthenticationBundle\Entity\Authorize
+        client:             Prokea\Bundle\AuthenticationBundle\Entity\Client
+        code:               Prokea\Bundle\AuthenticationBundle\Entity\Code
+        refresh_token:      Prokea\Bundle\AuthenticationBundle\Entity\RefreshToken
+        scope:              Prokea\Bundle\AuthenticationBundle\Entity\Scope
+        user:               Prokea\Bundle\AuthenticationBundle\Entity\User
